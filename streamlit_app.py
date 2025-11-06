@@ -47,4 +47,5 @@ if ingredients_list:
 # New section to display smoothiefront nutrition information
 import requests
 smoothiefront_response = requests.get("https://my.smoothiefront.com/api/fruit/watermelon")
-st.text(smoothiefront_response)
+# st.text(smoothiefront_response.json())
+sf_df = st.dataframe(data=smoothiefront_response.json(), use_container_width=True)
